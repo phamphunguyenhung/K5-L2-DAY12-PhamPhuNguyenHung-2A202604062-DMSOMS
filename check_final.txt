@@ -3,6 +3,3 @@ File: export_final.zip
   [WARN] D03.png: eye_right=open nhưng cả 4 điểm right_eye_* đều bị che: không thấy mắt thì eye_right nên là unknown
   [WARN] D06.png: eye_right=open nhưng cả 4 điểm right_eye_* đều bị che: không thấy mắt thì eye_right nên là unknown
 Kết quả: 0 lỗi, 2 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
-
-# Giải thích cảnh báo (WARN):
-# - D03.png, D06.png: eye_right=open trong khi các điểm right_eye_* đang có cờ occluded (đã đưa vào needs_review.html để người dùng xác nhận cuối).
