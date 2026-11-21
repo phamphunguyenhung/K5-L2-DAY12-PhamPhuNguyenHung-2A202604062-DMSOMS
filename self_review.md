@@ -21,7 +21,10 @@ Lần sau tránh bằng cách: Luôn chạy Geometry/Seat Deduplication Gate tr�
 
 ## 3. Ghi chú về disagreement_log
 
-Chưa có `disagreement_log.csv` do chưa tìm được học viên cùng mã `G12` công khai trên GitHub (`PEER_NOT_FOUND`, đang chờ coach ghép cặp).
+Đã thực hiện `cabin_check diff` với bài của bạn **Trần Nguyễn Phi Long** (`2A202604058`, `CybevisKeishaa`) trên `22` ảnh chung (`62` dòng bất đồng trong `disagreement_log.csv`).
+- Điểm bạn của mình đúng và mình đã sửa trong `export_final_v2.zip`:
+  - `D02.png` và `D04.png` (`face.glasses`): tài xế đeo kính cận gọng mảnh trong suốt (`clear`), sửa từ `none`/`sun` → `clear`.
+  - `S04_ir.png` (`child_seat.occupied`): ghế trống rõ ràng, sửa từ `unknown` → `no`.
 
 ## 4. Ghi chú dữ liệu mô phỏng & vật thể dị thường (báo cáo giảng viên / coach)
 - Toàn bộ bộ ảnh OMS (`S01..S08`, SVIRO) là ảnh **simulation dùng ma-nơ-canh**, không phải người thật.

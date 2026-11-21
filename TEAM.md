@@ -4,17 +4,15 @@ Mã bộ ảnh: **G12** · Hình thức: cá nhân
 
 | Họ tên | MSSV | Đã gán đủ 22 ảnh? | Review chéo với (peer diff) | Số dòng disagreement đã xử lý |
 |---|---|---|---|---|
-| Phạm Phú Nguyễn Hùng | 2A202604062 | có (bản nháp AI cục bộ + QC; chờ duyệt tay trên Web Review UI / CVAT) | PEER_NOT_FOUND (chưa tìm thấy học viên khác công khai mã G12 trên GitHub forks; chờ coach ghép cặp) | 0 (chờ ghép cặp) |
+| Phạm Phú Nguyễn Hùng | 2A202604062 | có | Trần Nguyễn Phi Long (`2A202604058`, GitHub: `CybevisKeishaa`) | 62 |
 
 Ca hai bạn vẫn không thống nhất và đã hỏi coach (ghi tên ảnh + đối tượng):
 
-- Chưa có (chờ ghép cặp review chéo).
+- `D01..D06` `frame_meta.light`: `unknown` (ảnh NIR không phân biệt ngày/đêm) vs `night`.
+- `S01, S03, S07` hình nộm trẻ em trong `child_seat`/`infant_seat` (đã cập nhật theo `labels_cabin_v1.json` mới với `child_seat.occupied=yes`).
 
 ## Cá nhân
 
 ### PhamPhuNguyenHung-2A202604062
-- Phần mình làm: Tự động hóa pipeline DMS/OMS cục bộ cho 22 ảnh cốt lõi (`S01..S08` RGB+IR, `D01..D06` NIR), kiểm tra schema/geometry bằng `cabin_check.py`, xây dựng Web Review UI cục bộ để rà soát và duyệt nhãn.
-- Điều mình học được hôm nay: Phân biệt rõ quy ước ghế theo xe (`rear_right` ở bên trái ảnh OMS nhìn ngược), trái/phải theo người trên ảnh DMS xoay 90° (`left_eye` có `y` lớn hơn), và tách biệt hiện tượng IR-sim (`SVIRO`) với IR thật (`Drive&Act`).
-
-## Ghi chú ca bất thường gửi Coach / Giảng viên
-- Bộ ảnh OMS `G12` (`S01..S08`) là ảnh **simulation (ma-nơ-canh)**; có **vật thể dị thường / bất thường** giống trẻ em trên ghế không phải người thật → chỉ gán `child_seat` / `infant_seat`, không gán `person`, và báo cáo để các thầy/coach xem xét bổ sung vào guideline.
+- Phần mình làm: Tự động hóa pipeline DMS/OMS cục bộ, gán & duyệt thủ công 22 ảnh cốt lõi trên CVAT Task 62, review chéo 62 dòng bất đồng với Trần Nguyễn Phi Long (`CybevisKeishaa`), sửa 3 điểm hợp lệ và xuất `export_final_v2.zip` đạt 0 lỗi 0 cảnh báo.
+- Điều mình học được hôm nay: Review chéo giúp phát hiện lỗi sót thuộc tính (`D02`/`D04` `glasses=clear`, `S04_ir` `occupied=no`), đồng thời khẳng định tầm quan trọng của `face13`, box `face` trong OMS và không suy đoán trên ảnh RGB quá tối (`S05_rgb`).
