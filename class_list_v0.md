@@ -32,3 +32,7 @@
 2. Câu hỏi: Khi một đồ vật (túi xách/cốc) nằm lọt hoàn toàn hoặc một phần trong ghế trẻ em (`child_seat`), `child_seat.occupied` nên đặt là `no` (vì không có trẻ em) hay `unknown`?
    Khung ví dụ: `S02_rgb.png` / `S02_ir.png`
    Bạn tạm gán thế nào và vì sao: Vẽ 2 box riêng (`child_seat` và `object` cùng `seat` theo §4.8), đặt `child_seat.occupied = no` nếu thấy rõ không có trẻ em, hoặc `unknown` nếu đồ vật che khuất lòng ghế.
+
+## 3. Báo cáo điểm bất thường ngoài Guideline (báo giảng viên / coach)
+- **Hiện tượng:** Dữ liệu OMS (`S01..S08`) là ảnh simulation dùng ma-nơ-canh; có xuất hiện **vật thể dị thường / bất thường** (hình nộm giống trẻ em/đồ vật lạ trên ghế) chưa được đề cập rõ trong Guideline Cabin v1.0.
+- **Cách xử lý tạm thời:** Chỉ vẽ box ghế (`child_seat` / `infant_seat`), **không vẽ `person`** cho hình nộm trẻ em vì không phải người thật, và báo cáo lại cho các thầy/coach.

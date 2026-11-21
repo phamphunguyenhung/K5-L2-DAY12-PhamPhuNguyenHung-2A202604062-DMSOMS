@@ -22,3 +22,7 @@ Lần sau tránh bằng cách: Luôn chạy Geometry/Seat Deduplication Gate tr�
 ## 3. Ghi chú về disagreement_log
 
 Chưa có `disagreement_log.csv` do chưa tìm được học viên cùng mã `G12` công khai trên GitHub (`PEER_NOT_FOUND`, đang chờ coach ghép cặp).
+
+## 4. Ghi chú dữ liệu mô phỏng & vật thể dị thường (báo cáo giảng viên / coach)
+- Toàn bộ bộ ảnh OMS (`S01..S08`, SVIRO) là ảnh **simulation dùng ma-nơ-canh**, không phải người thật.
+- Phát hiện **vật thể dị thường / bất thường** (hình nộm giống trẻ em đặt trong ghế trẻ em mà guideline chưa mô tả chi tiết). Theo hướng dẫn (`GUIDE.md §3`), **chỉ vẽ box ghế (`child_seat` / `infant_seat`), không vẽ box `person` cho trẻ em/ma-nơ-canh**, đồng thời ghi nhận để báo cáo cho các thầy/coach.
