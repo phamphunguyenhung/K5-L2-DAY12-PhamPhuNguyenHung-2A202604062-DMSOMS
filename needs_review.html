@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Day 12 · G12 Visual Attribute Review</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 20px 28px; font-size: 14px; }
+    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 20px; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; }
+    .pill { padding: 2px 8px; border-radius: 999px; background: #e2e8f0; font-size: 12px; font-weight: 600; }
+    .pill.prop { background: #dbeafe; color: #1e40af; }
+  </style>
+</head>
+<body>
+  <h1>Lab Day 12 · G12 Visual Attribute Review</h1>
+  <p>Task 62 / Job 61 · <a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">http://localhost:8080/tasks/62/jobs/61</a></p>
+  <div class="card">
+    <h2>Needs Human Review (10 cases)</h2>
+    <table>
+      <thead><tr><th>Image</th><th>Label</th><th>Attribute</th><th>Current &rarr; Proposed</th><th>Visual Evidence &amp; Reason</th><th>Preview</th><th>Decision</th></tr></thead>
+      <tbody>
+            <tr>
+              <td><strong>D02.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>object</code><br/><small>#17217</small></td>
+              <td><code>_box_check</code></td>
+              <td><span class="pill">object</span> &rarr; <span class="pill prop">REMOVE_PER_GUIDE_4_2</span></td>
+              <td>Object box around handheld item in DMS image.<br/><small style="color:#475569">GUIDE.md §4.2 forbids object boxes in DMS; requires human approval to delete.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D02.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(0, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D02.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17216</small></td>
+              <td><code>eye_left</code></td>
+              <td><span class="pill">closed</span> &rarr; <span class="pill prop">open</span></td>
+              <td>Both eyes look downward at object in hands with similar narrow open fissures; currently eye_left=closed, eye_right=open.<br/><small style="color:#475569">Likely both eyes open looking down; needs human confirmation.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D02.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(1, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D03.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17225</small></td>
+              <td><code>gaze_zone</code></td>
+              <td><span class="pill">other</span> &rarr; <span class="pill prop">center</span></td>
+              <td>Head turned left toward phone held near center console.<br/><small style="color:#475569">Looking at held phone near center; confirm center vs other.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D03.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(2, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D04.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17229</small></td>
+              <td><code>gaze_zone</code></td>
+              <td><span class="pill">other</span> &rarr; <span class="pill prop">center</span></td>
+              <td>Eyes looking down-left toward center console / lap.<br/><small style="color:#475569">Confirm center vs lap.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D04.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(3, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D05.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17233</small></td>
+              <td><code>glasses</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">clear</span></td>
+              <td>Dark temple arm visible in side profile; lens tint cannot be confirmed from profile.<br/><small style="color:#475569">Glasses present, confirm clear vs sun vs unknown.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D05.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(4, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D05.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>phone</code><br/><small>#17234</small></td>
+              <td><code>_box_check</code></td>
+              <td><span class="pill">phone</span> &rarr; <span class="pill prop">FALSE_POSITIVE_STEERING_LOGO</span></td>
+              <td>Phone box is drawn around the Audi 4-ring steering wheel hub logo.<br/><small style="color:#475569">False positive phone box; requires human approval to delete.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D05.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(5, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D06.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17239</small></td>
+              <td><code>eye_right</code></td>
+              <td><span class="pill">open</span> &rarr; <span class="pill prop">unknown</span></td>
+              <td>Strong IR LED reflection on right lens and 13/13 face13 landmarks marked occluded.<br/><small style="color:#475569">Resolves contradiction with face13 occlusion (cabin_check WARN).</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D06.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(6, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D06.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>object</code><br/><small>#17238</small></td>
+              <td><code>_box_check</code></td>
+              <td><span class="pill">object</span> &rarr; <span class="pill prop">REMOVE_PER_GUIDE_4_2</span></td>
+              <td>Object box around drinking bottle in DMS image.<br/><small style="color:#475569">GUIDE.md §4.2 forbids object boxes in DMS; requires human approval to delete.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D06.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(7, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S04_rgb.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>infant_seat</code><br/><small>#17272</small></td>
+              <td><code>_class_check</code></td>
+              <td><span class="pill">infant_seat</span> &rarr; <span class="pill prop">CHANGE_TO_child_seat</span></td>
+              <td>Upright forward-facing booster/child seat on rear_left (same as S04_ir child_seat).<br/><small style="color:#475569">Class mismatch between RGB (infant_seat) and IR (child_seat).</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S04_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(8, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S06_rgb.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>infant_seat</code><br/><small>#17277</small></td>
+              <td><code>_class_check</code></td>
+              <td><span class="pill">infant_seat</span> &rarr; <span class="pill prop">CHANGE_TO_child_seat</span></td>
+              <td>Upright forward-facing child seat on rear_right (same as S06_ir child_seat).<br/><small style="color:#475569">Class mismatch between RGB (infant_seat) and IR (child_seat).</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S06_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(9, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr></tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h2>Auto-Apply Candidates (34 cases)</h2>
+    <table>
+      <thead><tr><th>Image</th><th>Label</th><th>Attribute</th><th>Current &rarr; Proposed</th><th>Visual Evidence &amp; Reason</th><th>Preview</th><th>Status</th></tr></thead>
+      <tbody>
+            <tr>
+              <td><strong>D01.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17214</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Both hands rest together on lap; steering wheel below is untouched.<br/><small style="color:#475569">Hands clearly off steering wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D01.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(0, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D01.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17213</small></td>
+              <td><code>glasses</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">none</span></td>
+              <td>Zoomed face crop shows bare eyes, nose bridge, and temples with no frame or lens.<br/><small style="color:#475569">Clear visual evidence of no glasses.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D01.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(1, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D01.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17213</small></td>
+              <td><code>gaze_zone</code></td>
+              <td><span class="pill">other</span> &rarr; <span class="pill prop">lap</span></td>
+              <td>Head pitched down and eyes directed downward toward hands resting on lap.<br/><small style="color:#475569">Gaze directed at lap.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D01.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(2, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D01.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17212</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">worn_correct</span></td>
+              <td>Diagonal dark seatbelt strap clearly crosses from left shoulder across chest to right hip.<br/><small style="color:#475569">Seatbelt properly worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D01.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(3, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D01.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17210</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Both hands rest together on lap; steering wheel below is untouched.<br/><small style="color:#475569">Hands clearly off steering wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D01.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(4, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D02.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17219</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Both hands hold a small shiny object in front of lap, off the steering wheel.<br/><small style="color:#475569">Hands off steering wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D02.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(5, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D02.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17220</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">worn_correct</span></td>
+              <td>Diagonal dark seatbelt strap clearly crosses from left shoulder across chest.<br/><small style="color:#475569">Seatbelt properly worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D02.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(6, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D02.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17215</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Both hands hold a small shiny object in front of lap, off the steering wheel.<br/><small style="color:#475569">Hands off steering wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D02.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(7, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D02.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17216</small></td>
+              <td><code>glasses</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">clear</span></td>
+              <td>Thin metallic rimmed frame visible across nose bridge and temples; eyes visible through clear lenses.<br/><small style="color:#475569">Wearing clear glasses.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D02.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(8, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D02.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17216</small></td>
+              <td><code>gaze_zone</code></td>
+              <td><span class="pill">other</span> &rarr; <span class="pill prop">lap</span></td>
+              <td>Head and eyes directed straight down toward hands/object over lap.<br/><small style="color:#475569">Gaze directed at lap.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D02.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(9, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D03.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17225</small></td>
+              <td><code>glasses</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">none</span></td>
+              <td>Zoomed face crop shows no glasses frame on nose bridge or temples.<br/><small style="color:#475569">No glasses worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D03.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(10, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D03.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17224</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Right hand holds phone in mid-air.<br/><small style="color:#475569">Right hand holding phone, not on wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D03.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(11, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D03.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17223</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">yes</span></td>
+              <td>Left hand grasps lower rim of steering wheel.<br/><small style="color:#475569">Left hand clearly touching steering wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D03.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(12, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D03.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17222</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">worn_correct</span></td>
+              <td>Diagonal seatbelt strap clearly visible from left shoulder across chest.<br/><small style="color:#475569">Seatbelt properly worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D03.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(13, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D04.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17229</small></td>
+              <td><code>glasses</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">clear</span></td>
+              <td>Thin rimmed clear glasses frame visible across nose bridge and temples.<br/><small style="color:#475569">Wearing clear glasses.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D04.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(14, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D04.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17228</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Hand rests on lap/belt buckle, away from steering wheel.<br/><small style="color:#475569">Hand not on wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D04.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(15, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D04.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17227</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">worn_correct</span></td>
+              <td>Diagonal seatbelt strap clearly visible from left shoulder across chest.<br/><small style="color:#475569">Seatbelt properly worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D04.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(16, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D05.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17232</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">worn_correct</span></td>
+              <td>Diagonal seatbelt strap clearly visible from left shoulder across chest.<br/><small style="color:#475569">Seatbelt properly worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D05.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(17, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D05.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17233</small></td>
+              <td><code>gaze_zone</code></td>
+              <td><span class="pill">other</span> &rarr; <span class="pill prop">lap</span></td>
+              <td>Head pitched strongly downward toward lap/hands.<br/><small style="color:#475569">Looking down at lap.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D05.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(18, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D05.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17235</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Both hands rest on lap above steering wheel hub.<br/><small style="color:#475569">Hands off wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D05.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(19, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D05.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17236</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Both hands rest on lap above steering wheel hub.<br/><small style="color:#475569">Hands off wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D05.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(20, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D06.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17237</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">worn_correct</span></td>
+              <td>Diagonal dark seatbelt strap visible across left shoulder.<br/><small style="color:#475569">Seatbelt properly worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D06.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(21, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D06.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17242</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>One hand holds bottle at mouth, other hand rests on lap.<br/><small style="color:#475569">Both hands off steering wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D06.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(22, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D06.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>hand</code><br/><small>#17241</small></td>
+              <td><code>on_wheel</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>One hand holds bottle at mouth, other hand rests on lap.<br/><small style="color:#475569">Both hands off steering wheel.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D06.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(23, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D06.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17239</small></td>
+              <td><code>glasses</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">clear</span></td>
+              <td>Thick dark-rimmed glasses with transparent lenses showing eye region and IR reflections.<br/><small style="color:#475569">Wearing clear glasses.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D06.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(24, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>D06.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>face</code><br/><small>#17239</small></td>
+              <td><code>gaze_zone</code></td>
+              <td><span class="pill">other</span> &rarr; <span class="pill prop">road</span></td>
+              <td>Head upright facing forward toward windshield while drinking.<br/><small style="color:#475569">Gaze directed toward road.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_D06.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(25, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S01_ir.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17243</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">not_worn</span></td>
+              <td>Adult torso clearly visible in IR with no seatbelt strap.<br/><small style="color:#475569">No seatbelt worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S01_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(26, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S01_rgb.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17251</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">not_worn</span></td>
+              <td>Adult torso clearly lit in blue shirt with no seatbelt strap.<br/><small style="color:#475569">No seatbelt worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S01_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(27, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S02_ir.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>child_seat</code><br/><small>#17254</small></td>
+              <td><code>occupied</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Empty child seat clearly visible on rear_left in S02_ir.<br/><small style="color:#475569">Child seat is unoccupied.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S02_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(28, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S05_ir.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>object</code><br/><small>#17275</small></td>
+              <td><code>type</code></td>
+              <td><span class="pill">other</span> &rarr; <span class="pill prop">bag</span></td>
+              <td>Black tote handbag with handles clearly visible on rear_left seat.<br/><small style="color:#475569">Object is a bag.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S05_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(29, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S06_ir.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>child_seat</code><br/><small>#17276</small></td>
+              <td><code>occupied</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">no</span></td>
+              <td>Empty child seat clearly visible on rear_right.<br/><small style="color:#475569">Child seat is unoccupied.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S06_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(30, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S07_ir.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17281</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">not_worn</span></td>
+              <td>Adult torso clearly lit in S07_ir with no seatbelt strap.<br/><small style="color:#475569">No seatbelt worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S07_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(31, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S08_ir.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17287</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">not_worn</span></td>
+              <td>Adult torso clearly lit in IR with no seatbelt strap.<br/><small style="color:#475569">No seatbelt worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S08_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(32, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>S08_rgb.png</strong><br/><a href="http://localhost:8080/tasks/62/jobs/61" target="_blank">Open CVAT</a></td>
+              <td><code>person</code><br/><small>#17289</small></td>
+              <td><code>seatbelt</code></td>
+              <td><span class="pill">unknown</span> &rarr; <span class="pill prop">not_worn</span></td>
+              <td>Adult torso in grey sweater clearly lit with no seatbelt strap.<br/><small style="color:#475569">No seatbelt worn.</small></td>
+              <td><img src="artifacts/g12_audit/views/audit_S08_pair.png" style="max-width:260px;border:1px solid #cbd5e1;border-radius:4px;" /></td>
+              <td>
+                <select onchange="setDec(33, this.value)">
+                  <option value="pending">Pending</option>
+                  <option value="accept">Accept</option>
+                  <option value="reject">Reject</option>
+                  <option value="keep_unknown">Keep Unknown</option>
+                </select>
+              </td>
+            </tr></tbody>
+    </table>
+  </div>
+  <script>
+    const decs = JSON.parse(localStorage.getItem('day12_attr_decs') || '{}');
+    function setDec(i, v) { decs[i] = v; localStorage.setItem('day12_attr_decs', JSON.stringify(decs)); }
+  </script>
+</body>
+</html>

@@ -4,6 +4,5 @@ File: export_final.zip
   [WARN] D06.png: eye_right=open nhưng cả 4 điểm right_eye_* đều bị che: không thấy mắt thì eye_right nên là unknown
 Kết quả: 0 lỗi, 2 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
 
-# Giải thích cảnh báo (WARN) & Ghi chú ca bất thường:
-# - D03.png, D06.png: Người gán đã quan sát trực tiếp và xác nhận mắt phải mở (eye_right=open); các điểm right_eye_* bị che nhẹ bởi góc nghiêng/gọng kính nên giữ cờ occluded theo guideline.
-# - Ghi chú dữ liệu mô phỏng & vật thể dị thường (OMS S01-S08): Toàn bộ ảnh OMS (SVIRO) là ảnh simulation dùng ma-nơ-canh; một số ghế trẻ em/nôi có vật thể/hình nộm dị thường giống trẻ em không phải người thật -> chỉ gán box ghế (child_seat / infant_seat), KHÔNG gán nhãn person cho trẻ em giả/ma-nơ-canh, và báo cáo ca bất thường cho giảng viên/coach theo GUIDE §3.
+# Giải thích cảnh báo (WARN):
+# - D03.png, D06.png: eye_right=open trong khi các điểm right_eye_* đang có cờ occluded (đã đưa vào needs_review.html để người dùng xác nhận cuối).

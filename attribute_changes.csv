@@ -1,0 +1,46 @@
+﻿image_id,shape_id,label,attribute,old_value,proposed_value,confidence,visible_evidence,reason,review_status,action
+D01.png,17214,hand,on_wheel,unknown,no,high,Both hands rest together on lap; steering wheel below is untouched.,Hands clearly off steering wheel.,AUTO-APPLY CANDIDATE,apply
+D01.png,17213,face,glasses,unknown,none,high,"Zoomed face crop shows bare eyes, nose bridge, and temples with no frame or lens.",Clear visual evidence of no glasses.,AUTO-APPLY CANDIDATE,apply
+D01.png,17213,face,gaze_zone,other,lap,high,Head pitched down and eyes directed downward toward hands resting on lap.,Gaze directed at lap.,AUTO-APPLY CANDIDATE,apply
+D01.png,17212,person,seatbelt,unknown,worn_correct,high,Diagonal dark seatbelt strap clearly crosses from left shoulder across chest to right hip.,Seatbelt properly worn.,AUTO-APPLY CANDIDATE,apply
+D01.png,17210,hand,on_wheel,unknown,no,high,Both hands rest together on lap; steering wheel below is untouched.,Hands clearly off steering wheel.,AUTO-APPLY CANDIDATE,apply
+D02.png,17219,hand,on_wheel,unknown,no,high,"Both hands hold a small shiny object in front of lap, off the steering wheel.",Hands off steering wheel.,AUTO-APPLY CANDIDATE,apply
+D02.png,17217,object,_box_check,object,REMOVE_PER_GUIDE_4_2,high,Object box around handheld item in DMS image.,GUIDE.md §4.2 forbids object boxes in DMS; requires human approval to delete.,NEEDS HUMAN REVIEW,flag_for_human
+D02.png,17220,person,seatbelt,unknown,worn_correct,high,Diagonal dark seatbelt strap clearly crosses from left shoulder across chest.,Seatbelt properly worn.,AUTO-APPLY CANDIDATE,apply
+D02.png,17215,hand,on_wheel,unknown,no,high,"Both hands hold a small shiny object in front of lap, off the steering wheel.",Hands off steering wheel.,AUTO-APPLY CANDIDATE,apply
+D02.png,17216,face,glasses,unknown,clear,high,Thin metallic rimmed frame visible across nose bridge and temples; eyes visible through clear lenses.,Wearing clear glasses.,AUTO-APPLY CANDIDATE,apply
+D02.png,17216,face,eye_left,closed,open,medium,"Both eyes look downward at object in hands with similar narrow open fissures; currently eye_left=closed, eye_right=open.",Likely both eyes open looking down; needs human confirmation.,NEEDS HUMAN REVIEW,human_review
+D02.png,17216,face,gaze_zone,other,lap,high,Head and eyes directed straight down toward hands/object over lap.,Gaze directed at lap.,AUTO-APPLY CANDIDATE,apply
+D03.png,17225,face,glasses,unknown,none,high,Zoomed face crop shows no glasses frame on nose bridge or temples.,No glasses worn.,AUTO-APPLY CANDIDATE,apply
+D03.png,17225,face,gaze_zone,other,center,medium,Head turned left toward phone held near center console.,Looking at held phone near center; confirm center vs other.,NEEDS HUMAN REVIEW,human_review
+D03.png,17224,hand,on_wheel,unknown,no,high,Right hand holds phone in mid-air.,"Right hand holding phone, not on wheel.",AUTO-APPLY CANDIDATE,apply
+D03.png,17223,hand,on_wheel,unknown,yes,high,Left hand grasps lower rim of steering wheel.,Left hand clearly touching steering wheel.,AUTO-APPLY CANDIDATE,apply
+D03.png,17222,person,seatbelt,unknown,worn_correct,high,Diagonal seatbelt strap clearly visible from left shoulder across chest.,Seatbelt properly worn.,AUTO-APPLY CANDIDATE,apply
+D04.png,17229,face,glasses,unknown,clear,high,Thin rimmed clear glasses frame visible across nose bridge and temples.,Wearing clear glasses.,AUTO-APPLY CANDIDATE,apply
+D04.png,17229,face,gaze_zone,other,center,medium,Eyes looking down-left toward center console / lap.,Confirm center vs lap.,NEEDS HUMAN REVIEW,human_review
+D04.png,17228,hand,on_wheel,unknown,no,high,"Hand rests on lap/belt buckle, away from steering wheel.",Hand not on wheel.,AUTO-APPLY CANDIDATE,apply
+D04.png,17227,person,seatbelt,unknown,worn_correct,high,Diagonal seatbelt strap clearly visible from left shoulder across chest.,Seatbelt properly worn.,AUTO-APPLY CANDIDATE,apply
+D05.png,17232,person,seatbelt,unknown,worn_correct,high,Diagonal seatbelt strap clearly visible from left shoulder across chest.,Seatbelt properly worn.,AUTO-APPLY CANDIDATE,apply
+D05.png,17233,face,glasses,unknown,clear,medium,Dark temple arm visible in side profile; lens tint cannot be confirmed from profile.,"Glasses present, confirm clear vs sun vs unknown.",NEEDS HUMAN REVIEW,human_review
+D05.png,17233,face,gaze_zone,other,lap,high,Head pitched strongly downward toward lap/hands.,Looking down at lap.,AUTO-APPLY CANDIDATE,apply
+D05.png,17234,phone,_box_check,phone,FALSE_POSITIVE_STEERING_LOGO,high,Phone box is drawn around the Audi 4-ring steering wheel hub logo.,False positive phone box; requires human approval to delete.,NEEDS HUMAN REVIEW,flag_for_human
+D05.png,17235,hand,on_wheel,unknown,no,high,Both hands rest on lap above steering wheel hub.,Hands off wheel.,AUTO-APPLY CANDIDATE,apply
+D05.png,17236,hand,on_wheel,unknown,no,high,Both hands rest on lap above steering wheel hub.,Hands off wheel.,AUTO-APPLY CANDIDATE,apply
+D06.png,17237,person,seatbelt,unknown,worn_correct,high,Diagonal dark seatbelt strap visible across left shoulder.,Seatbelt properly worn.,AUTO-APPLY CANDIDATE,apply
+D06.png,17242,hand,on_wheel,unknown,no,high,"One hand holds bottle at mouth, other hand rests on lap.",Both hands off steering wheel.,AUTO-APPLY CANDIDATE,apply
+D06.png,17241,hand,on_wheel,unknown,no,high,"One hand holds bottle at mouth, other hand rests on lap.",Both hands off steering wheel.,AUTO-APPLY CANDIDATE,apply
+D06.png,17239,face,glasses,unknown,clear,high,Thick dark-rimmed glasses with transparent lenses showing eye region and IR reflections.,Wearing clear glasses.,AUTO-APPLY CANDIDATE,apply
+D06.png,17239,face,eye_right,open,unknown,high,Strong IR LED reflection on right lens and 13/13 face13 landmarks marked occluded.,Resolves contradiction with face13 occlusion (cabin_check WARN).,NEEDS HUMAN REVIEW,human_review
+D06.png,17239,face,gaze_zone,other,road,high,Head upright facing forward toward windshield while drinking.,Gaze directed toward road.,AUTO-APPLY CANDIDATE,apply
+D06.png,17238,object,_box_check,object,REMOVE_PER_GUIDE_4_2,high,Object box around drinking bottle in DMS image.,GUIDE.md §4.2 forbids object boxes in DMS; requires human approval to delete.,NEEDS HUMAN REVIEW,flag_for_human
+S01_ir.png,17243,person,seatbelt,unknown,not_worn,high,Adult torso clearly visible in IR with no seatbelt strap.,No seatbelt worn.,AUTO-APPLY CANDIDATE,apply
+S01_rgb.png,17251,person,seatbelt,unknown,not_worn,high,Adult torso clearly lit in blue shirt with no seatbelt strap.,No seatbelt worn.,AUTO-APPLY CANDIDATE,apply
+S02_ir.png,17254,child_seat,occupied,unknown,no,high,Empty child seat clearly visible on rear_left in S02_ir.,Child seat is unoccupied.,AUTO-APPLY CANDIDATE,apply
+S04_rgb.png,17272,infant_seat,_class_check,infant_seat,CHANGE_TO_child_seat,high,Upright forward-facing booster/child seat on rear_left (same as S04_ir child_seat).,Class mismatch between RGB (infant_seat) and IR (child_seat).,NEEDS HUMAN REVIEW,flag_for_human
+S05_ir.png,17274,child_seat,occupied,no,no,high,Already occupied=no.,Verified correct.,KEEP CURRENT,none
+S05_ir.png,17275,object,type,other,bag,high,Black tote handbag with handles clearly visible on rear_left seat.,Object is a bag.,AUTO-APPLY CANDIDATE,apply
+S06_ir.png,17276,child_seat,occupied,unknown,no,high,Empty child seat clearly visible on rear_right.,Child seat is unoccupied.,AUTO-APPLY CANDIDATE,apply
+S06_rgb.png,17277,infant_seat,_class_check,infant_seat,CHANGE_TO_child_seat,high,Upright forward-facing child seat on rear_right (same as S06_ir child_seat).,Class mismatch between RGB (infant_seat) and IR (child_seat).,NEEDS HUMAN REVIEW,flag_for_human
+S07_ir.png,17281,person,seatbelt,unknown,not_worn,high,Adult torso clearly lit in S07_ir with no seatbelt strap.,No seatbelt worn.,AUTO-APPLY CANDIDATE,apply
+S08_ir.png,17287,person,seatbelt,unknown,not_worn,high,Adult torso clearly lit in IR with no seatbelt strap.,No seatbelt worn.,AUTO-APPLY CANDIDATE,apply
+S08_rgb.png,17289,person,seatbelt,unknown,not_worn,high,Adult torso in grey sweater clearly lit with no seatbelt strap.,No seatbelt worn.,AUTO-APPLY CANDIDATE,apply
