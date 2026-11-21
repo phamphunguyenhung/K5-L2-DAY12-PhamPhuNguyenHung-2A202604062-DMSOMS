@@ -4,3 +4,4 @@ S02_ir,IR_sim,"Vật dụng và lòng ghế trẻ em ở vùng tối bị mất 
 S03_ir,IR_sim,"Độ sáng mô phỏng theo kênh đỏ làm vùng ghế giữa và ghế trái có độ tương phản phẳng hơn RGB",person/infant_seat,"Cần kiểm kỹ ranh giới hộp theo hình dạng người và nôi, không đoán từ màu"
 D01,real_IR,"Ảnh NIR 940nm giữ rõ cấu trúc khuôn mặt và tay tài xế trong cabin thiếu sáng nhưng không phân biệt được màu sắc",glasses/seatbelt,"Chỉ dựa vào hình dạng gọng/tròng kính; vùng tối trên vai giữ seatbelt=unknown"
 D03,real_IR,"Đốm phản xạ LED cận hồng ngoại hoặc góc nghiêng đầu làm một bên mắt khó phân biệt mí mở/nhắm",eye_left/eye_right,"Đánh cờ occluded cho điểm face13 bị che và ghi unknown cho mắt không thấy rõ"
+S05_ir,IR_sim,"Ảnh S05_rgb quá tối và mờ nên không nhìn thấy vật thể trên ghế sau, trong khi S05_ir giữ được biên dạng child_seat (rear_right) và object (rear_left)",child_seat/object,"Không suy diễn từ S05_ir sang S05_rgb (tuân thủ §4.4-1); chỉ gán những gì thấy rõ trên từng ảnh"
