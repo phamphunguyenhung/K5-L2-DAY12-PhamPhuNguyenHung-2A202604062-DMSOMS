@@ -1,0 +1,6 @@
+frame_id,source,phenomenon,affected_field,effect_on_label
+S01_ir,IR_sim,"Mất thông tin màu sắc quần áo và độ tương phản dây an toàn trên nền áo tối",seatbelt,"Giữ unknown nếu không thấy rõ dải dây; trên SVIRO không có ai thắt dây"
+S02_ir,IR_sim,"Vật dụng và lòng ghế trẻ em ở vùng tối bị mất chi tiết màu, chỉ còn biên sáng",occupied/type,"Dựa vào hình dạng biên vật thể; không chắc loại đồ vật thì ghi other"
+S03_ir,IR_sim,"Độ sáng mô phỏng theo kênh đỏ làm vùng ghế giữa và ghế trái có độ tương phản phẳng hơn RGB",person/infant_seat,"Cần kiểm kỹ ranh giới hộp theo hình dạng người và nôi, không đoán từ màu"
+D01,real_IR,"Ảnh NIR 940nm giữ rõ cấu trúc khuôn mặt và tay tài xế trong cabin thiếu sáng nhưng không phân biệt được màu sắc",glasses/seatbelt,"Chỉ dựa vào hình dạng gọng/tròng kính; vùng tối trên vai giữ seatbelt=unknown"
+D03,real_IR,"Đốm phản xạ LED cận hồng ngoại hoặc góc nghiêng đầu làm một bên mắt khó phân biệt mí mở/nhắm",eye_left/eye_right,"Đánh cờ occluded cho điểm face13 bị che và ghi unknown cho mắt không thấy rõ"

@@ -1,0 +1,48 @@
+{
+  "exam_id": "G12",
+  "lab": "K5-L2-Day12-DMS-OMS",
+  "student": {
+    "name": "Phạm Phú Nguyễn Hùng",
+    "student_id": "2A202604062",
+    "github": "phamphunguyenhung"
+  },
+  "repo": {
+    "upstream": "https://github.com/VinUni-AI20k/K5-L2-Day12-DMS-OMS-student",
+    "fork": "https://github.com/phamphunguyenhung/K5-L2-Day12-DMS-OMS-student",
+    "branch": "feat/day12-g12-dms-oms"
+  },
+  "dataset": {
+    "root": "G12",
+    "core_count": 22,
+    "oms_core": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08"],
+    "oms_extra": ["S09", "S10"],
+    "dms_core": ["D01", "D02", "D03", "D04", "D05", "D06"],
+    "oms_resolution": [960, 640],
+    "dms_resolution": [1280, 1024],
+    "dms_rotation_deg": 90,
+    "sviro_car": "x5",
+    "sviro_rear_seats": ["rear_left", "rear_middle", "rear_right"]
+  },
+  "schema": {
+    "labels_file": "labels_cabin_v1.json",
+    "validator_script": "scripts/cabin_check.py",
+    "export_format": "CVAT for images 1.1",
+    "save_images": false,
+    "min_face13_width_px": 60
+  },
+  "deliverables": [
+    "export_final.zip",
+    "export_final_v2.zip",
+    "check_cpA.txt",
+    "check_cpB.txt",
+    "check_final.txt",
+    "check_final_v2.txt",
+    "disagreement_log.csv",
+    "ir_log.csv",
+    "class_list_v0.md",
+    "self_review.md",
+    "exit_ticket.md",
+    "TEAM.md",
+    "prompts.md"
+  ]
+}

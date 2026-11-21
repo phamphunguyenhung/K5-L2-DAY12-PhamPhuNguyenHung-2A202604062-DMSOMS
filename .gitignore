@@ -11,3 +11,9 @@ __pycache__/
 *.pyc
 .DS_Store
 .env*
+
+# Day 12 local artifacts & overlays (keep images local only per RULES.md)
+review_ui/overlays/
+artifacts/
+part_A.zip
+part_B.zip
